@@ -30,7 +30,7 @@ Links out to the app (`app.dermdesk.com.au/signup`, `/login`, `/apply`) are hard
 
 ## Before going live
 
-See `LAUNCH-CHECKLIST.md`. Business details such as the legal name, ABN and emails are still yellow placeholders on the Contact, Privacy and Terms pages.
+See `LAUNCH-CHECKLIST.md`. All business details are filled in; any `CONFIG` value set back to `None` shows as a yellow placeholder on the Contact, Privacy and Terms pages.
 
 - **Contact form:** it posts JSON `{role, name, email, subject, message}` to `FORM_ENDPOINT` (set it in `build.py` CONFIG). Any endpoint that returns 2xx works, e.g. Formspree or a serverless function. If it's left empty, the form opens the visitor's email app instead.
 
