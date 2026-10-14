@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DermDesk | Online skin consultations with dermal professionals</title>
+<meta name="description" content="See a qualified dermal professional over video, from home. Get a treatment plan made for your skin, track your progress and message your dermal professional between consults.">
+<meta property="og:title" content="DermDesk | Online skin consultations with dermal professionals">
+<meta property="og:description" content="See a qualified dermal professional over video, from home. Get a treatment plan made for your skin, track your progress and message your dermal professional between consults.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#FFFCF5">
+<link rel="icon" type="image/svg+xml" href="/assets/mark-sage.svg">
+<link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("/assets/fonts/fraunces-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/assets/fonts/inter-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/assets/fonts/inter-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/assets/fonts/inter-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+body{margin:0;background:#FFFCF5}
+.dd-navfull,.dd-navcompact,.dd-menu-closed,.dd-wide{display:contents}
+.dd-more,.dd-menu-open{display:none}
+.dd-more.is-open,[data-menu="open"] .dd-menu-open{display:contents}
+[data-menu="open"] .dd-menu-closed{display:none}
+@media (max-width:1179.98px){.dd-navfull{display:none}}
+@media (min-width:1180px){.dd-navcompact,.dd-menu-open,[data-menu="open"] .dd-menu-open{display:none}}
+@media (max-width:899.98px){.dd-wide{display:none}}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+details>summary::-webkit-details-marker{display:none}
+details>summary>span:last-child{transition:transform .2s ease}
+details[open]>summary>span:last-child{transform:rotate(45deg)}
+</style>
+</head>
+<body>
+<div style="container-type: inline-size; background: #FFFCF5; color: #1a1a1a; font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 16px; line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased;">
+
+<div style="display: contents;">
+<header style="position: sticky; top: 0; z-index: 20; background: #FFFCF5; border-bottom: 1px solid #efebe1;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 18px clamp(20px, 4cqw, 56px); box-sizing: border-box; display: flex; align-items: center; gap: clamp(12px, 2.25cqw, 32px);">
+    <a href="/" aria-label="DermDesk home" style="display: inline-flex; flex: none; text-decoration: none;"><img src="/assets/logo-sage.svg" alt="DermDesk" style="display: block; height: clamp(22px, 1.8cqw, 26px); width: auto;"></a>
+    <div class="dd-navfull">
+      <nav aria-label="Main" style="display: flex; align-items: center; gap: 28px; margin-left: auto;">
+        <a href="#concerns" style="font-size: 14.5px; font-weight: 500; color: #1a1a1a; text-decoration: none;">What we help with</a>
+        <a href="#how-it-works" style="font-size: 14.5px; font-weight: 500; color: #1a1a1a; text-decoration: none;">How it works</a>
+        <a href="#pricing" style="font-size: 14.5px; font-weight: 500; color: #1a1a1a; text-decoration: none;">Pricing</a>
+        <a href="#faq" style="font-size: 14.5px; font-weight: 500; color: #1a1a1a; text-decoration: none;">FAQ</a>
+        <a href="/clinicians" style="font-size: 14.5px; font-weight: 500; color: #1a1a1a; text-decoration: none;">For dermal professionals</a>
+        <div style="position: relative;">
+          <button type="button" aria-expanded="false" aria-controls="more-menu" data-dd="toggle-more" style="display: inline-flex; align-items: center; gap: 5px; margin: 0; padding: 0; border: 0; background: none; font-family: inherit; font-size: 14.5px; font-weight: 500; line-height: 1.6; color: #1a1a1a; cursor: pointer;">More<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg></button>
+          <div class="dd-more">
+            <div id="more-menu" style="position: absolute; top: calc(100% + 22px); right: -14px; z-index: 30; min-width: 216px; box-sizing: border-box; padding: 8px; background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 14px; box-shadow: 0 24px 44px -26px rgba(74,78,63,0.55), 0 2px 6px rgba(74,78,63,0.06);">
+              <a href="/about" style="display: flex; align-items: center; min-height: 42px; padding: 0 12px; border-radius: 8px; font-size: 14.5px; color: #1a1a1a; text-decoration: none;">About</a>
+              <a href="/contact" style="display: flex; align-items: center; min-height: 42px; padding: 0 12px; border-radius: 8px; font-size: 14.5px; color: #1a1a1a; text-decoration: none;">Contact</a>
+              <a href="/privacy" style="display: flex; align-items: center; min-height: 42px; padding: 0 12px; border-radius: 8px; font-size: 14.5px; color: #1a1a1a; text-decoration: none;">Privacy Policy</a>
+              <a href="/terms" style="display: flex; align-items: center; min-height: 42px; padding: 0 12px; border-radius: 8px; font-size: 14.5px; color: #1a1a1a; text-decoration: none;">Terms of Service</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div style="display: flex; align-items: center; gap: 18px; margin-left: auto; flex: none;">
+        <a href="https://app.dermdesk.com.au/login" style="font-size: 14.5px; font-weight: 500; color: #1a1a1a; text-decoration: none;">Sign in</a>
+        <a href="https://app.dermdesk.com.au/signup" style="display: inline-flex; align-items: center; height: 44px; padding: 0 20px; border-radius: 999px; background: #6f7460; color: #FFFCF5; font-size: 14.5px; font-weight: 500; text-decoration: none; white-space: nowrap; box-sizing: border-box;">Sign up</a>
+      </div>
+    </div>
+    <div class="dd-navcompact">
+      <div style="display: flex; align-items: center; gap: 8px; margin-left: auto; flex: none;">
+        <a href="https://app.dermdesk.com.au/signup" style="display: inline-flex; align-items: center; height: 44px; padding: 0 16px; border-radius: 999px; background: #6f7460; color: #FFFCF5; font-size: 14px; font-weight: 500; text-decoration: none; white-space: nowrap; box-sizing: border-box;">Sign up</a>
+        <button type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu" data-dd="toggle-menu" style="width: 44px; height: 44px; flex: none; margin: 0; padding: 0; box-sizing: border-box; border-radius: 999px; border: 1px solid #e5e2d8; background: #FFFFFF; color: #1a1a1a; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+          <div class="dd-menu-open"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg></div>
+          <div class="dd-menu-closed"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="dd-menu-open">
+    <div id="site-menu" style="position: absolute; top: 100%; left: 0; right: 0; z-index: 30; box-sizing: border-box; padding: 4px 20px 24px; background: #FFFCF5; border-bottom: 1px solid #efebe1; box-shadow: 0 30px 44px -30px rgba(26,26,26,0.4);">
+      <nav aria-label="Menu">
+        <ul style="list-style: none; margin: 0; padding: 0;">
+          <li style="border-bottom: 1px solid #efebe1;"><a href="#concerns" data-dd="close-menu" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; font-family: 'Fraunces', Georgia, serif; font-size: 21px; line-height: 1.2; color: #1a1a1a; text-decoration: none;">What we help with<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6f7460" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><path d="M9 6l6 6-6 6"></path></svg></a></li>
+          <li style="border-bottom: 1px solid #efebe1;"><a href="#how-it-works" data-dd="close-menu" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; font-family: 'Fraunces', Georgia, serif; font-size: 21px; line-height: 1.2; color: #1a1a1a; text-decoration: none;">How it works<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6f7460" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><path d="M9 6l6 6-6 6"></path></svg></a></li>
+          <li style="border-bottom: 1px solid #efebe1;"><a href="#pricing" data-dd="close-menu" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; font-family: 'Fraunces', Georgia, serif; font-size: 21px; line-height: 1.2; color: #1a1a1a; text-decoration: none;">Pricing<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6f7460" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><path d="M9 6l6 6-6 6"></path></svg></a></li>
+          <li style="border-bottom: 1px solid #efebe1;"><a href="#faq" data-dd="close-menu" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; font-family: 'Fraunces', Georgia, serif; font-size: 21px; line-height: 1.2; color: #1a1a1a; text-decoration: none;">FAQ<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6f7460" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><path d="M9 6l6 6-6 6"></path></svg></a></li>
+          <li style="border-bottom: 1px solid #efebe1;"><a href="/clinicians" style="display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 56px; font-family: 'Fraunces', Georgia, serif; font-size: 21px; line-height: 1.2; color: #1a1a1a; text-decoration: none;">For dermal professionals<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6f7460" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><path d="M9 6l6 6-6 6"></path></svg></a></li>
+        </ul>
+        <p style="margin: 22px 0 4px; font-size: 13px; font-weight: 500; color: #6f7460;">More</p>
+        <ul style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 16px;">
+          <li><a href="/about" style="display: flex; align-items: center; min-height: 44px; font-size: 15.5px; color: #1a1a1a; text-decoration: none;">About</a></li>
+          <li><a href="/contact" style="display: flex; align-items: center; min-height: 44px; font-size: 15.5px; color: #1a1a1a; text-decoration: none;">Contact</a></li>
+          <li><a href="/privacy" style="display: flex; align-items: center; min-height: 44px; font-size: 15.5px; color: #1a1a1a; text-decoration: none;">Privacy Policy</a></li>
+          <li><a href="/terms" style="display: flex; align-items: center; min-height: 44px; font-size: 15.5px; color: #1a1a1a; text-decoration: none;">Terms of Service</a></li>
+        </ul>
+      </nav>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 18px;">
+        <a href="https://app.dermdesk.com.au/login" style="display: flex; align-items: center; justify-content: center; height: 48px; box-sizing: border-box; border-radius: 999px; border: 1px solid #d9d4c7; background: #FFFFFF; color: #1a1a1a; font-size: 15px; font-weight: 500; text-decoration: none;">Sign in</a>
+        <a href="https://app.dermdesk.com.au/signup" style="display: flex; align-items: center; justify-content: center; height: 48px; box-sizing: border-box; border-radius: 999px; background: #6f7460; color: #FFFCF5; font-size: 15px; font-weight: 500; text-decoration: none;">Sign up</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section aria-labelledby="hero-title" style="padding: clamp(20px, 2.4cqw, 36px) 0 clamp(64px, 6.7cqw, 96px);">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4cqw, 56px); box-sizing: border-box;">
+    <h1 id="hero-title" style="margin: 0; max-width: 13.5em; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(42px, 5.3cqw, 76px); line-height: 1.05; letter-spacing: -0.02em; text-wrap: balance;">Online skin consultations with qualified dermal professionals</h1>
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 40px 48px; margin-top: clamp(28px, 3.6cqw, 52px);">
+      <div style="flex: 1 1 360px; max-width: 470px;">
+        <p style="margin: 0; font-size: clamp(17px, 1.35cqw, 19px); line-height: 1.6; color: #4a4e3f;">See a dermal professional over video, from home. Get a treatment plan made for your skin, then track your progress and message your dermal professional between consults.</p>
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px; margin-top: 34px;">
+          <a href="https://app.dermdesk.com.au/signup" style="display: inline-flex; align-items: center; justify-content: center; height: 54px; padding: 0 30px; border-radius: 999px; background: #6f7460; color: #FFFCF5; font-size: 15.5px; font-weight: 500; text-decoration: none; white-space: nowrap; box-sizing: border-box;">Create your free account</a>
+          <a href="#how-it-works" style="font-size: 15.5px; font-weight: 500; color: #1a1a1a; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 5px;">See how it works</a>
+        </div>
+        <p style="margin: 16px 0 0; display: flex; align-items: center; gap: 8px; font-size: 14px; line-height: 1.45; color: #6f7460;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.3l2.7 2.7 5.5-5.5"></path></svg>Free to sign up. Pay per consult, with no subscription.</p>
+        <ul style="list-style: none; margin: 34px 0 0; padding: 28px 0 0; border-top: 1px solid #e5e2d8; display: flex; flex-direction: column; gap: 14px;">
+          <li style="display: flex; align-items: center; gap: 12px; font-size: 14.5px; line-height: 1.45;"><span style="width: 34px; height: 34px; flex: none; border-radius: 50%; background: rgba(138,142,117,0.14); color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="3"></rect><circle cx="9" cy="10.5" r="2"></circle><path d="M5.8 16.2c.7-1.6 1.9-2.4 3.2-2.4s2.5.8 3.2 2.4M14.5 9.5h3.5M14.5 13h3.5"></path></svg></span>Every dermal professional reviewed by our team</li>
+          <li style="display: flex; align-items: center; gap: 12px; font-size: 14.5px; line-height: 1.45;"><span style="width: 34px; height: 34px; flex: none; border-radius: 50%; background: rgba(138,142,117,0.14); color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"></path></svg></span>Photos and notes private to you and your dermal professional</li>
+        </ul>
+      </div>
+      <div style="flex: 1.3 1 480px; min-width: 0; position: relative;">
+        <img src="/assets/member-hero.jpg" alt="A woman smiling on a video consult from her laptop at home" style="display: block; width: 100%; height: auto; aspect-ratio: 16 / 11; object-fit: cover; border-radius: 24px; background: #E9E0CF;">
+        <div class="dd-wide">
+          <div style="position: absolute; top: 40px; left: -28px; z-index: 2; display: flex; align-items: center; gap: 12px; padding: 12px 12px 12px 14px; background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 16px; box-shadow: 0 24px 44px -26px rgba(74,78,63,0.55), 0 2px 6px rgba(74,78,63,0.06); color: #1a1a1a;">
+            <span style="width: 40px; height: 40px; flex: none; border-radius: 50%; background: linear-gradient(135deg, #D5C7AD, #8A8E75); color: #FFFCF5; font-size: 13px; font-weight: 600; display: flex; align-items: center; justify-content: center;">ER</span>
+            <div>
+              <p style="margin: 0; font-size: 13.5px; font-weight: 600; line-height: 1.3;">Video consult with Eliza</p>
+              <p style="margin: 1px 0 0; font-size: 12px; line-height: 1.35; color: #6f7460;">Thursday, 2:00 pm</p>
+            </div>
+            <span style="margin-left: 6px; padding: 7px 14px; border-radius: 999px; background: #6f7460; color: #FFFCF5; font-size: 12px; font-weight: 600;">Join</span>
+          </div>
+        </div>
+        <div role="img" aria-label="Preview of the DermDesk app: today's skincare routine from your dermal professional" style="position: relative; z-index: 2; box-sizing: border-box; width: min(334px, 100%); margin: clamp(-210px, -14cqw, -96px) clamp(-24px, -1.7cqw, 0px) 0 auto; padding: 20px; background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 16px; box-shadow: 0 30px 54px -30px rgba(74,78,63,0.48), 0 2px 8px rgba(74,78,63,0.06); color: #1a1a1a;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid #e5e2d8;">
+            <div>
+              <p style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 18px; font-weight: 500; line-height: 1.2;">Today’s routine</p>
+              <p style="margin: 3px 0 0; font-size: 12.5px; line-height: 1.35; color: #6f7460;">From Eliza Reyes, Dermal Professional</p>
+            </div>
+            <span style="padding: 4px 10px; border-radius: 999px; background: rgba(138,142,117,0.13); color: #6f7460; font-size: 11.5px; font-weight: 500; white-space: nowrap;">Morning</span>
+          </div>
+          <ol style="list-style: none; margin: 0; padding: 0;">
+            <li style="display: flex; gap: 12px; padding: 11px 0; border-bottom: 1px solid #f1eee6;"><span style="width: 22px; height: 22px; flex: none; margin-top: 1px; border-radius: 50%; background: rgba(138,142,117,0.15); color: #6f7460; font-size: 11.5px; font-weight: 600; display: flex; align-items: center; justify-content: center;">1</span><div><p style="margin: 0; font-size: 13.5px; font-weight: 500; line-height: 1.35;">Gentle foaming cleanser</p><p style="margin: 2px 0 0; font-size: 12px; line-height: 1.4; color: #6f7460;">30 seconds, lukewarm water</p></div></li>
+            <li style="display: flex; gap: 12px; padding: 11px 0; border-bottom: 1px solid #f1eee6;"><span style="width: 22px; height: 22px; flex: none; margin-top: 1px; border-radius: 50%; background: rgba(138,142,117,0.15); color: #6f7460; font-size: 11.5px; font-weight: 600; display: flex; align-items: center; justify-content: center;">2</span><div><p style="margin: 0; font-size: 13.5px; font-weight: 500; line-height: 1.35;">Vitamin C serum</p><p style="margin: 2px 0 0; font-size: 12px; line-height: 1.4; color: #6f7460;">5 drops, pat in</p></div></li>
+            <li style="display: flex; gap: 12px; padding: 11px 0; border-bottom: 1px solid #f1eee6;"><span style="width: 22px; height: 22px; flex: none; margin-top: 1px; border-radius: 50%; background: rgba(138,142,117,0.15); color: #6f7460; font-size: 11.5px; font-weight: 600; display: flex; align-items: center; justify-content: center;">3</span><div><p style="margin: 0; font-size: 13.5px; font-weight: 500; line-height: 1.35;">Lightweight moisturiser</p><p style="margin: 2px 0 0; font-size: 12px; line-height: 1.4; color: #6f7460;">Pea-sized amount, full face</p></div></li>
+            <li style="display: flex; gap: 12px; padding: 11px 0;"><span style="width: 22px; height: 22px; flex: none; margin-top: 1px; border-radius: 50%; background: rgba(138,142,117,0.15); color: #6f7460; font-size: 11.5px; font-weight: 600; display: flex; align-items: center; justify-content: center;">4</span><div><p style="margin: 0; font-size: 13.5px; font-weight: 500; line-height: 1.35;">Mineral SPF50</p><p style="margin: 2px 0 0; font-size: 12px; line-height: 1.4; color: #6f7460;">Re-apply every 2 hours outdoors</p></div></li>
+          </ol>
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 4px; padding-top: 14px; border-top: 1px solid #e5e2d8; font-size: 12.5px; color: #6f7460;"><span>Next consult</span><strong style="color: #1a1a1a; font-weight: 600;">Thursday, 2:00 pm</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section aria-label="Why DermDesk" style="background: #FFFFFF; border-top: 1px solid #e5e2d8; border-bottom: 1px solid #e5e2d8;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4cqw, 56px); box-sizing: border-box;">
+    <ul style="list-style: none; margin: 0; padding: 28px 0; display: flex; flex-wrap: wrap; gap: 22px 32px;">
+      <li style="flex: 1 1 220px; display: flex; align-items: flex-start; gap: 14px;"><span style="width: 42px; height: 42px; flex: none; border-radius: 50%; background: #EFE8DA; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="15" rx="3"></rect><circle cx="9" cy="10.5" r="2"></circle><path d="M5.8 16.2c.7-1.6 1.9-2.4 3.2-2.4s2.5.8 3.2 2.4M14.5 9.5h3.5M14.5 13h3.5"></path></svg></span><div><p style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 18px; font-weight: 500; line-height: 1.3;">Qualified dermal professionals</p><p style="margin: 3px 0 0; font-size: 14px; line-height: 1.5; color: #6f7460;">Every application reviewed by our team</p></div></li>
+      <li style="flex: 1 1 220px; display: flex; align-items: flex-start; gap: 14px;"><span style="width: 42px; height: 42px; flex: none; border-radius: 50%; background: #EFE8DA; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 11l8-6.5 8 6.5v8.5a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"></path></svg></span><div><p style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 18px; font-weight: 500; line-height: 1.3;">Consult from home</p><p style="margin: 3px 0 0; font-size: 14px; line-height: 1.5; color: #6f7460;">Video calls on your phone or laptop</p></div></li>
+      <li style="flex: 1 1 220px; display: flex; align-items: flex-start; gap: 14px;"><span style="width: 42px; height: 42px; flex: none; border-radius: 50%; background: #EFE8DA; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19.5C5 11 11 5 19.5 4.5 19 13 13 19 5 19.5z"></path><path d="M5 19.5l7.5-7.5"></path></svg></span><div><p style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 18px; font-weight: 500; line-height: 1.3;">Ongoing support</p><p style="margin: 3px 0 0; font-size: 14px; line-height: 1.5; color: #6f7460;">Your plan, progress and messages in one place</p></div></li>
+      <li style="flex: 1 1 220px; display: flex; align-items: flex-start; gap: 14px;"><span style="width: 42px; height: 42px; flex: none; border-radius: 50%; background: #EFE8DA; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2.5"></rect><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"></path></svg></span><div><p style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 18px; font-weight: 500; line-height: 1.3;">Private and secure</p><p style="margin: 3px 0 0; font-size: 14px; line-height: 1.5; color: #6f7460;">Photos and notes stay between you and your dermal professional</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="concerns" aria-labelledby="concerns-title" style="padding: clamp(56px, 7.2cqw, 104px) 0;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4cqw, 56px); box-sizing: border-box;">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 48px;">
+      <h2 id="concerns-title" style="margin: 0; flex: 1 1 420px; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.3cqw, 46px); line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance;">Skin concerns we help with</h2>
+      <p style="margin: 0; flex: 0 1 470px; font-size: clamp(17px, 1.25cqw, 18px); line-height: 1.6; color: #4a4e3f;">Dermal professionals on DermDesk work with everyday skin concerns, and can build a routine around the products you already use.</p>
+    </div>
+    <ul style="list-style: none; margin: clamp(36px, 3.9cqw, 56px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(max(150px, calc(25% - 12px)), 1fr)); gap: 16px;">
+      <li style="box-sizing: border-box; padding: clamp(18px, 1.7cqw, 24px); background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 20px;"><span style="width: 46px; height: 46px; border-radius: 50%; background: #EFE8DA; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="9" r="2.2"></circle><circle cx="15.8" cy="7.6" r="1.4"></circle><circle cx="14.4" cy="14.8" r="2.6"></circle><circle cx="7.6" cy="16.4" r="1.3"></circle></svg></span><h3 style="margin: 22px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(18px, 1.5cqw, 21px); line-height: 1.25;">Acne &amp; breakouts</h3><p style="margin: 8px 0 0; font-size: clamp(14px, 1.05cqw, 15px); line-height: 1.55; color: #6f7460;">Ongoing breakouts, congestion and blackheads.</p></li>
+      <li style="box-sizing: border-box; padding: clamp(18px, 1.7cqw, 24px); background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 20px;"><span style="width: 46px; height: 46px; border-radius: 50%; background: #EFE8DA; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14.5A7.5 7.5 0 1 1 9.5 5a6 6 0 0 0 9.5 9.5z"></path></svg></span><h3 style="margin: 22px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(18px, 1.5cqw, 21px); line-height: 1.25;">Hormonal skin</h3><p style="margin: 8px 0 0; font-size: clamp(14px, 1.05cqw, 15px); line-height: 1.55; color: #6f7460;">Flare-ups around the chin and jaw that come and go with your cycle.</p></li>
+      <li style="box-sizing: border-box; padding: clamp(18px, 1.7cqw, 24px); background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 20px;"><span style="width: 46px; height: 46px; border-radius: 50%; background: #EFE8DA; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"></path></svg></span><h3 style="margin: 22px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(18px, 1.5cqw, 21px); line-height: 1.25;">Pigmentation</h3><p style="margin: 8px 0 0; font-size: clamp(14px, 1.05cqw, 15px); line-height: 1.55; color: #6f7460;">Sun spots, melasma and uneven skin tone.</p></li>
+      <li style="box-sizing: border-box; padding: clamp(18px, 1.7cqw, 24px); background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 20px;"><span style="width: 46px; height: 46px; border-radius: 50%; background: #EFE8DA; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0"></path></svg></span><h3 style="margin: 22px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(18px, 1.5cqw, 21px); line-height: 1.25;">Rosacea &amp; sensitivity</h3><p style="margin: 8px 0 0; font-size: clamp(14px, 1.05cqw, 15px); line-height: 1.55; color: #6f7460;">Redness, flushing and skin that reacts easily.</p></li>
+      <li style="box-sizing: border-box; padding: clamp(18px, 1.7cqw, 24px); background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 20px;"><span style="width: 46px; height: 46px; border-radius: 50%; background: #EFE8DA; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5c3.5 4.2 6 7.4 6 10.5a6 6 0 0 1-12 0c0-3.1 2.5-6.3 6-10.5z"></path><path d="M9.5 14.5a2.5 2.5 0 0 0 2.5 2.5"></path></svg></span><h3 style="margin: 22px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(18px, 1.5cqw, 21px); line-height: 1.25;">Eczema</h3><p style="margin: 8px 0 0; font-size: clamp(14px, 1.05cqw, 15px); line-height: 1.55; color: #6f7460;">Dry, itchy patches and a skin barrier that needs support.</p></li>
+      <li style="box-sizing: border-box; padding: clamp(18px, 1.7cqw, 24px); background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 20px;"><span style="width: 46px; height: 46px; border-radius: 50%; background: #EFE8DA; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h7M14 8h6M4 12h4M11 12h9M4 16h9M16 16h4"></path></svg></span><h3 style="margin: 22px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(18px, 1.5cqw, 21px); line-height: 1.25;">Scarring</h3><p style="margin: 8px 0 0; font-size: clamp(14px, 1.05cqw, 15px); line-height: 1.55; color: #6f7460;">Acne scars, marks and uneven texture.</p></li>
+      <li style="box-sizing: border-box; padding: clamp(18px, 1.7cqw, 24px); background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 20px;"><span style="width: 46px; height: 46px; border-radius: 50%; background: #EFE8DA; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 3.5h10M7 20.5h10M8 3.5c0 4 8 5 8 8.5s-8 4.5-8 8.5M16 3.5c0 4-8 5-8 8.5s8 4.5 8 8.5"></path></svg></span><h3 style="margin: 22px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(18px, 1.5cqw, 21px); line-height: 1.25;">Anti-ageing</h3><p style="margin: 8px 0 0; font-size: clamp(14px, 1.05cqw, 15px); line-height: 1.55; color: #6f7460;">Fine lines, dullness and loss of firmness.</p></li>
+      <li style="box-sizing: border-box; padding: clamp(18px, 1.7cqw, 24px); background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 20px;"><span style="width: 46px; height: 46px; border-radius: 50%; background: #EFE8DA; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3.5c0 2 1.5 3 3.5 3s3.5-1 3.5-3M6 21V11a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v10"></path></svg></span><h3 style="margin: 22px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(18px, 1.5cqw, 21px); line-height: 1.25;">Body skin</h3><p style="margin: 8px 0 0; font-size: clamp(14px, 1.05cqw, 15px); line-height: 1.55; color: #6f7460;">Breakouts, dryness and rough texture on the back, chest and arms.</p></li>
+    </ul>
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 32px; margin-top: 16px; padding: clamp(22px, 2cqw, 28px) clamp(22px, 2.2cqw, 32px); border-radius: 20px; background: #EFE8DA;">
+      <p style="margin: 0; flex: 1 1 300px; max-width: 34em; font-family: 'Fraunces', Georgia, serif; font-size: clamp(19px, 1.55cqw, 22px); line-height: 1.35;">Not sure what’s behind your skin concern? Start with an initial consultation and work it out together.</p>
+      <a href="https://app.dermdesk.com.au/signup" style="display: inline-flex; align-items: center; justify-content: center; height: 54px; padding: 0 30px; border-radius: 999px; background: #6f7460; color: #FFFCF5; font-size: 15.5px; font-weight: 500; text-decoration: none; white-space: nowrap; box-sizing: border-box;">Create your free account</a>
+    </div>
+    <p style="margin: 24px 0 0; font-size: 14px; line-height: 1.55; color: #6f7460;">Some concerns need to be seen in person. If yours does, your dermal professional will tell you.</p>
+  </div>
+</section>
+
+<section id="how-it-works" aria-labelledby="how-title" style="padding: clamp(56px, 7.2cqw, 104px) 0; background: #FFFFFF; border-top: 1px solid #e5e2d8; border-bottom: 1px solid #e5e2d8;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4cqw, 56px); box-sizing: border-box;">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 48px;">
+      <h2 id="how-title" style="margin: 0; flex: 1 1 420px; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.3cqw, 46px); line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance;">How it works</h2>
+      <p style="margin: 0; flex: 0 1 470px; font-size: clamp(17px, 1.25cqw, 18px); line-height: 1.6; color: #4a4e3f;">From sign-up to your first treatment plan in four steps, all from your phone or laptop.</p>
+    </div>
+    <ol style="list-style: none; margin: clamp(36px, 3.9cqw, 56px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(max(240px, calc(25% - 15px)), 1fr)); gap: 36px 20px;">
+      <li>
+        <div style="position: relative; height: 252px; box-sizing: border-box; padding: 52px 22px 20px; border-radius: 20px; background: #EFE8DA; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <span aria-hidden="true" style="position: absolute; top: 14px; left: 14px; width: 30px; height: 30px; border-radius: 50%; background: #FFFFFF; border: 1px solid #e5e2d8; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-size: 15px; font-weight: 500; color: #6f7460;">1</span>
+          <div aria-hidden="true" style="width: 100%; max-width: 224px; box-sizing: border-box; padding: 14px; background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 14px; box-shadow: 0 18px 36px -24px rgba(74,78,63,0.45); font-size: 11.5px; line-height: 1.35;">
+            <p style="margin: 0 0 4px; font-size: 10.5px; font-weight: 500; color: #6f7460;">Email</p>
+            <div style="padding: 7px 9px; border: 1px solid #e5e2d8; border-radius: 8px;">sarah@example.com</div>
+            <p style="margin: 8px 0 4px; font-size: 10.5px; font-weight: 500; color: #6f7460;">Password</p>
+            <div style="padding: 7px 9px; border: 1px solid #e5e2d8; border-radius: 8px; letter-spacing: 0.1em;">••••••••••</div>
+            <div style="margin-top: 12px; padding: 8px; border-radius: 999px; background: #6f7460; color: #FFFCF5; text-align: center; font-weight: 600;">Create account</div>
+          </div>
+        </div>
+        <h3 style="margin: 22px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(19px, 1.5cqw, 21px); line-height: 1.25;">Create your free account</h3>
+        <p style="margin: 8px 0 0; max-width: 32ch; font-size: 15px; line-height: 1.55; color: #6f7460;">Sign up in under a minute. It’s free, and you only pay when you book.</p>
+      </li>
+      <li>
+        <div style="position: relative; height: 252px; box-sizing: border-box; padding: 52px 22px 20px; border-radius: 20px; background: #EFE8DA; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <span aria-hidden="true" style="position: absolute; top: 14px; left: 14px; width: 30px; height: 30px; border-radius: 50%; background: #FFFFFF; border: 1px solid #e5e2d8; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-size: 15px; font-weight: 500; color: #6f7460;">2</span>
+          <div aria-hidden="true" style="width: 100%; max-width: 224px; box-sizing: border-box; padding: 14px; background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 14px; box-shadow: 0 18px 36px -24px rgba(74,78,63,0.45); font-size: 11.5px; line-height: 1.35;">
+            <div style="display: flex; align-items: center; gap: 9px; padding: 9px 10px; border: 1px solid #6f7460; border-radius: 10px; background: rgba(138,142,117,0.07);"><span style="width: 6px; height: 6px; flex: none; border-radius: 50%; border: 4px solid #6f7460;"></span><div style="flex: 1;"><p style="margin: 0; font-weight: 600;">Initial consultation</p><p style="margin: 1px 0 0; font-size: 10.5px; color: #6f7460;">45 min, video call</p></div><span style="font-weight: 600;">$149</span></div>
+            <div style="display: flex; align-items: center; gap: 9px; margin-top: 8px; padding: 9px 10px; border: 1px solid #e5e2d8; border-radius: 10px;"><span style="width: 11px; height: 11px; flex: none; border-radius: 50%; border: 1.5px solid #D5C7AD;"></span><div style="flex: 1;"><p style="margin: 0; font-weight: 600;">Follow-up</p><p style="margin: 1px 0 0; font-size: 10.5px; color: #6f7460;">30 min, video call</p></div><span style="font-weight: 600;">$99</span></div>
+          </div>
+        </div>
+        <h3 style="margin: 22px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(19px, 1.5cqw, 21px); line-height: 1.25;">Book your consult</h3>
+        <p style="margin: 8px 0 0; max-width: 32ch; font-size: 15px; line-height: 1.55; color: #6f7460;">Choose the type of consult, your dermal professional and a time that suits you, then pay securely.</p>
+      </li>
+      <li>
+        <div style="position: relative; height: 252px; box-sizing: border-box; padding: 52px 22px 20px; border-radius: 20px; background: #EFE8DA; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <span aria-hidden="true" style="position: absolute; top: 14px; left: 14px; width: 30px; height: 30px; border-radius: 50%; background: #FFFFFF; border: 1px solid #e5e2d8; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-size: 15px; font-weight: 500; color: #6f7460;">3</span>
+          <div aria-hidden="true" style="width: 100%; max-width: 224px; box-sizing: border-box; padding: 14px; background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 14px; box-shadow: 0 18px 36px -24px rgba(74,78,63,0.45); font-size: 11.5px; line-height: 1.35;">
+            <p style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 14px; font-weight: 500;">Skin photos</p>
+            <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 10px;">
+              <div style="position: relative; aspect-ratio: 3 / 3.7; box-sizing: border-box; padding: 6px; border-radius: 8px; background: linear-gradient(160deg, #F1EADD, #DACCB2); display: flex; align-items: flex-end; font-size: 10px; font-weight: 500; color: #4a4e3f;"><span style="position: absolute; top: 5px; right: 5px; width: 16px; height: 16px; border-radius: 50%; background: #6f7460; color: #FFFCF5; display: flex; align-items: center; justify-content: center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg></span>Front</div>
+              <div style="position: relative; aspect-ratio: 3 / 3.7; box-sizing: border-box; padding: 6px; border-radius: 8px; background: linear-gradient(160deg, #F1EADD, #DACCB2); display: flex; align-items: flex-end; font-size: 10px; font-weight: 500; color: #4a4e3f;"><span style="position: absolute; top: 5px; right: 5px; width: 16px; height: 16px; border-radius: 50%; background: #6f7460; color: #FFFCF5; display: flex; align-items: center; justify-content: center;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg></span>Left</div>
+              <div style="aspect-ratio: 3 / 3.7; box-sizing: border-box; border-radius: 8px; border: 1px dashed #D5C7AD; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15.5V4.5M7.5 9L12 4.5 16.5 9M4.5 15v3.5a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V15"></path></svg></div>
+            </div>
+            <p style="margin: 9px 0 0; font-size: 10.5px; color: #6f7460;">2 of 3 uploaded</p>
+          </div>
+        </div>
+        <h3 style="margin: 22px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(19px, 1.5cqw, 21px); line-height: 1.25;">Tell us about your skin</h3>
+        <p style="margin: 8px 0 0; max-width: 32ch; font-size: 15px; line-height: 1.55; color: #6f7460;">Before your consult, fill in a short intake form and add a few photos.</p>
+      </li>
+      <li>
+        <div style="position: relative; height: 252px; box-sizing: border-box; padding: 52px 22px 20px; border-radius: 20px; background: #EFE8DA; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <span aria-hidden="true" style="position: absolute; top: 14px; left: 14px; width: 30px; height: 30px; border-radius: 50%; background: #FFFFFF; border: 1px solid #e5e2d8; display: flex; align-items: center; justify-content: center; font-family: 'Fraunces', Georgia, serif; font-size: 15px; font-weight: 500; color: #6f7460;">4</span>
+          <div aria-hidden="true" style="width: 100%; max-width: 224px; box-sizing: border-box; padding: 8px; background: #3f4236; border-radius: 14px; box-shadow: 0 18px 36px -24px rgba(74,78,63,0.45);">
+            <div style="position: relative; height: 118px; border-radius: 9px; background: radial-gradient(120% 100% at 60% 30%, #a3a68e, #6f7460); display: flex; align-items: center; justify-content: center;">
+              <span style="width: 48px; height: 48px; box-sizing: border-box; border-radius: 50%; border: 2px solid rgba(255,252,245,0.6); background: linear-gradient(135deg, #D5C7AD, #8A8E75); color: #FFFCF5; font-size: 15px; font-weight: 600; display: flex; align-items: center; justify-content: center;">ER</span>
+              <span style="position: absolute; left: 8px; bottom: 7px; padding: 2px 7px; border-radius: 999px; background: rgba(26,26,26,0.35); color: #FFFCF5; font-size: 10px; font-weight: 500;">Eliza Reyes</span>
+              <span style="position: absolute; top: 7px; right: 7px; width: 40px; height: 52px; box-sizing: border-box; padding-bottom: 4px; border-radius: 7px; border: 1.5px solid rgba(255,252,245,0.8); background: linear-gradient(160deg, #F1EADD, #DACCB2); color: #4a4e3f; font-size: 9px; display: flex; align-items: flex-end; justify-content: center;">You</span>
+            </div>
+            <div style="display: flex; justify-content: center; gap: 8px; margin-top: 8px;">
+              <span style="width: 28px; height: 28px; border-radius: 50%; background: rgba(255,252,245,0.16); color: #FFFCF5; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"></path></svg></span>
+              <span style="width: 28px; height: 28px; border-radius: 50%; background: rgba(255,252,245,0.16); color: #FFFCF5; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13.5" height="12" rx="3"></rect><path d="M16 10.5l5.5-3v9l-5.5-3"></path></svg></span>
+              <span style="width: 40px; height: 28px; border-radius: 999px; background: #b45050; color: #FFFCF5; display: flex; align-items: center; justify-content: center;"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3.2 13.6c4.9-4.1 12.7-4.1 17.6 0l-1.9 2.7c-.4.6-1.2.8-1.8.4l-2.4-1.2c-.5-.3-.8-.9-.7-1.5l.2-1.2c-2.6-.8-5.3-.8-7.9 0l.2 1.2c.1.6-.2 1.2-.7 1.5l-2.4 1.2c-.6.4-1.4.2-1.8-.4z"></path></svg></span>
+            </div>
+          </div>
+        </div>
+        <h3 style="margin: 22px 0 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(19px, 1.5cqw, 21px); line-height: 1.25;">Meet on video</h3>
+        <p style="margin: 8px 0 0; max-width: 32ch; font-size: 15px; line-height: 1.55; color: #6f7460;">Talk through your skin and goals. Your dermal professional then builds your treatment plan.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section id="pricing" aria-labelledby="pricing-title" style="padding: clamp(56px, 7.2cqw, 104px) 0;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4cqw, 56px); box-sizing: border-box;">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 48px;">
+      <h2 id="pricing-title" style="margin: 0; flex: 1 1 420px; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.3cqw, 46px); line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance;">Clear pricing, paid per consult</h2>
+      <p style="margin: 0; flex: 0 1 470px; font-size: clamp(17px, 1.25cqw, 18px); line-height: 1.6; color: #4a4e3f;">No subscription and no lock-in. Choose the consult you need and you’ll see the price before you book.</p>
+    </div>
+    <ul style="list-style: none; margin: clamp(44px, 4.4cqw, 64px) 0 0; padding: 14px 0 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(max(280px, calc(33.333% - 14px)), 1fr)); gap: 36px 20px;">
+      <li style="position: relative; box-sizing: border-box; display: flex; flex-direction: column; padding: 36px clamp(24px, 2.2cqw, 32px) 32px; border-radius: 24px; background: #FFFFFF; border: 1px solid #6f7460; box-shadow: 0 0 0 1px #6f7460, 0 36px 70px -46px rgba(74,78,63,0.6);">
+        <span style="position: absolute; top: -14px; left: 30px; padding: 6px 14px; border-radius: 999px; background: #6f7460; color: #FFFCF5; font-size: 12.5px; font-weight: 600;">Start here</span>
+        <h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 24px; line-height: 1.2;">Initial consultation</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; font-size: 13.5px; color: #6f7460;"><span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg>45 min</span><span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13.5" height="12" rx="3"></rect><path d="M16 10.5l5.5-3v9l-5.5-3"></path></svg>Video call</span></div>
+        <div style="display: flex; align-items: baseline; gap: 8px; margin-top: 24px; padding-top: 24px; border-top: 1px solid #e5e2d8;"><span style="font-family: 'Fraunces', Georgia, serif; font-size: 52px; line-height: 1; letter-spacing: -0.02em;">$149</span><span style="font-size: 14px; color: #6f7460;">AUD</span></div>
+        <p style="margin: 18px 0 0; flex: 1; font-size: 15.5px; line-height: 1.6; color: #6f7460;">A deep dive into your skin. Your dermal professional reviews your intake, talks through your goals and creates your first treatment plan.</p>
+        <p style="margin: 18px 0 0; display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 500;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; color: #6f7460;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.3l2.7 2.7 5.5-5.5"></path></svg>Best for new clients</p>
+        <a href="https://app.dermdesk.com.au/signup" style="display: flex; align-items: center; justify-content: center; height: 54px; margin-top: 26px; border-radius: 999px; background: #6f7460; color: #FFFCF5; font-size: 15.5px; font-weight: 500; text-decoration: none;">Create your free account</a>
+      </li>
+      <li style="position: relative; box-sizing: border-box; display: flex; flex-direction: column; padding: 36px clamp(24px, 2.2cqw, 32px) 32px; border-radius: 24px; background: #FFFFFF; border: 1px solid #e5e2d8;">
+        <h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 24px; line-height: 1.2;">Follow-up consultation</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; font-size: 13.5px; color: #6f7460;"><span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg>30 min</span><span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13.5" height="12" rx="3"></rect><path d="M16 10.5l5.5-3v9l-5.5-3"></path></svg>Video call</span></div>
+        <div style="display: flex; align-items: baseline; gap: 8px; margin-top: 24px; padding-top: 24px; border-top: 1px solid #e5e2d8;"><span style="font-family: 'Fraunces', Georgia, serif; font-size: 52px; line-height: 1; letter-spacing: -0.02em;">$99</span><span style="font-size: 14px; color: #6f7460;">AUD</span></div>
+        <p style="margin: 18px 0 0; flex: 1; font-size: 15.5px; line-height: 1.6; color: #6f7460;">Review your progress, adjust your treatment plan and ask any questions.</p>
+        <p style="margin: 18px 0 0; display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 500;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; color: #6f7460;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.3l2.7 2.7 5.5-5.5"></path></svg>For returning clients</p>
+        <a href="https://app.dermdesk.com.au/signup" style="display: flex; align-items: center; justify-content: center; height: 54px; margin-top: 26px; border-radius: 999px; box-shadow: inset 0 0 0 1px #D5C7AD; color: #1a1a1a; font-size: 15.5px; font-weight: 500; text-decoration: none;">Create your free account</a>
+      </li>
+      <li style="position: relative; box-sizing: border-box; display: flex; flex-direction: column; padding: 36px clamp(24px, 2.2cqw, 32px) 32px; border-radius: 24px; background: #FFFFFF; border: 1px solid #e5e2d8;">
+        <h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 24px; line-height: 1.2;">Quick review</h3>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; font-size: 13.5px; color: #6f7460;"><span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg>15 min</span><span style="display: inline-flex; align-items: center; gap: 6px;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="6" width="13.5" height="12" rx="3"></rect><path d="M16 10.5l5.5-3v9l-5.5-3"></path></svg>Video call</span></div>
+        <div style="display: flex; align-items: baseline; gap: 8px; margin-top: 24px; padding-top: 24px; border-top: 1px solid #e5e2d8;"><span style="font-family: 'Fraunces', Georgia, serif; font-size: 52px; line-height: 1; letter-spacing: -0.02em;">$59</span><span style="font-size: 14px; color: #6f7460;">AUD</span></div>
+        <p style="margin: 18px 0 0; flex: 1; font-size: 15.5px; line-height: 1.6; color: #6f7460;">A focused check-in for a single concern, a product question or a quick update.</p>
+        <p style="margin: 18px 0 0; display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 500;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none; color: #6f7460;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.3l2.7 2.7 5.5-5.5"></path></svg>For a single concern</p>
+        <a href="https://app.dermdesk.com.au/signup" style="display: flex; align-items: center; justify-content: center; height: 54px; margin-top: 26px; border-radius: 999px; box-shadow: inset 0 0 0 1px #D5C7AD; color: #1a1a1a; font-size: 15.5px; font-weight: 500; text-decoration: none;">Create your free account</a>
+      </li>
+    </ul>
+    <p style="margin: 32px 0 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; text-align: center; font-size: 14.5px; line-height: 1.5; color: #6f7460;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="flex: none;"><path d="M12 3.5l7 3v5.5c0 4.3-3 7.6-7 8.5-4-.9-7-4.2-7-8.5V6.5z"></path><path d="M9 12l2.2 2.2L15.5 10"></path></svg>Prices in AUD. Payments are processed securely by Stripe when you book.</p>
+  </div>
+</section>
+</div>
+
+<div style="display: contents;">
+<section aria-labelledby="care-title" style="padding: clamp(56px, 7.2cqw, 104px) 0; background: #FFFFFF; border-bottom: 1px solid #e5e2d8;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4cqw, 56px); box-sizing: border-box;">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 48px 72px;">
+      <div style="flex: 1 1 400px; max-width: 520px;">
+        <h2 id="care-title" style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.3cqw, 46px); line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance;">Care that carries on after your consult</h2>
+        <p style="margin: 18px 0 0; font-size: clamp(17px, 1.25cqw, 18px); line-height: 1.6; color: #4a4e3f;">Your plan, progress and messages live in your DermDesk account, so you always know what to do next.</p>
+        <ul style="list-style: none; margin: 36px 0 0; padding: 0; border-bottom: 1px solid #D5C7AD;">
+          <li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid #D5C7AD;"><span style="width: 42px; height: 42px; flex: none; border-radius: 12px; background: rgba(138,142,117,0.13); color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19.5C5 11 11 5 19.5 4.5 19 13 13 19 5 19.5z"></path><path d="M5 19.5l7.5-7.5"></path></svg></span><div><h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 20px; line-height: 1.25;">Your treatment plan</h3><p style="margin: 4px 0 0; font-size: 15.5px; line-height: 1.55; color: #6f7460;">A morning and evening routine, step by step, with notes from your dermal professional.</p></div></li>
+          <li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid #D5C7AD;"><span style="width: 42px; height: 42px; flex: none; border-radius: 12px; background: rgba(138,142,117,0.13); color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3"></rect><circle cx="9" cy="10.5" r="1.8"></circle><path d="M21 16l-5-5-8.5 8.5"></path></svg></span><div><h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 20px; line-height: 1.25;">Progress photos</h3><p style="margin: 4px 0 0; font-size: 15.5px; line-height: 1.55; color: #6f7460;">Upload photos as you go, so your dermal professional can see how your skin is changing.</p></div></li>
+          <li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid #D5C7AD;"><span style="width: 42px; height: 42px; flex: none; border-radius: 12px; background: rgba(138,142,117,0.13); color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 15.5a2 2 0 0 1-2 2H9.5L4.5 21V6.5a2 2 0 0 1 2-2H18a2 2 0 0 1 2 2z"></path></svg></span><div><h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 20px; line-height: 1.25;">Messages</h3><p style="margin: 4px 0 0; font-size: 15.5px; line-height: 1.55; color: #6f7460;">Ask questions between consults, and share photos or PDFs.</p></div></li>
+          <li style="display: flex; gap: 18px; padding: 20px 0; border-top: 1px solid #D5C7AD;"><span style="width: 42px; height: 42px; flex: none; border-radius: 12px; background: rgba(138,142,117,0.13); color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3 2"></path></svg></span><div><h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: 20px; line-height: 1.25;">Consult history</h3><p style="margin: 4px 0 0; font-size: 15.5px; line-height: 1.55; color: #6f7460;">Look back at past consults, dermal professional notes and earlier plans.</p></div></li>
+        </ul>
+      </div>
+      <div style="flex: 1 1 440px; min-width: 0; position: relative;">
+        <img src="/assets/member-routine.jpg" alt="A woman applying moisturiser during her morning skincare routine" style="display: block; width: 100%; height: auto; aspect-ratio: 1 / 1.02; object-fit: cover; border-radius: 24px; background: #E9E0CF;">
+        <div role="img" aria-label="Preview of the DermDesk app: a progress check-in with photos and a message from your dermal professional" style="position: relative; z-index: 2; box-sizing: border-box; width: min(384px, 100%); margin: clamp(-250px, -17cqw, -100px) auto 0 clamp(-44px, -3cqw, 0px); padding: 20px; background: #FFFFFF; border: 1px solid #e5e2d8; border-radius: 16px; box-shadow: 0 30px 54px -30px rgba(74,78,63,0.48), 0 2px 8px rgba(74,78,63,0.06); color: #1a1a1a;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid #e5e2d8;">
+            <div>
+              <p style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 18px; font-weight: 500; line-height: 1.2;">Progress check-in</p>
+              <p style="margin: 3px 0 0; font-size: 12.5px; line-height: 1.35; color: #6f7460;">Week 4 of your plan</p>
+            </div>
+            <span style="padding: 4px 10px; border-radius: 999px; background: rgba(138,142,117,0.13); color: #6f7460; font-size: 11.5px; font-weight: 500; white-space: nowrap;">3 photos</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 16px;">
+            <div style="aspect-ratio: 3 / 3.4; box-sizing: border-box; padding: 8px 9px; border-radius: 10px; background: linear-gradient(160deg, #F1EADD, #DACCB2); display: flex; align-items: flex-end; font-size: 11px; font-weight: 500; color: #4a4e3f;">Front</div>
+            <div style="aspect-ratio: 3 / 3.4; box-sizing: border-box; padding: 8px 9px; border-radius: 10px; background: linear-gradient(160deg, #F1EADD, #DACCB2); display: flex; align-items: flex-end; font-size: 11px; font-weight: 500; color: #4a4e3f;">Left side</div>
+            <div style="aspect-ratio: 3 / 3.4; box-sizing: border-box; padding: 8px 9px; border-radius: 10px; background: linear-gradient(160deg, #F1EADD, #DACCB2); display: flex; align-items: flex-end; font-size: 11px; font-weight: 500; color: #4a4e3f;">Right side</div>
+          </div>
+          <div style="display: flex; gap: 10px; margin-top: 18px;">
+            <span style="width: 30px; height: 30px; flex: none; border-radius: 50%; background: linear-gradient(135deg, #D5C7AD, #8A8E75); color: #FFFCF5; font-size: 11px; font-weight: 600; display: flex; align-items: center; justify-content: center;">ER</span>
+            <div>
+              <p style="margin: 0; font-size: 12.5px; font-weight: 600;">Eliza Reyes <span style="font-weight: 400; color: #6f7460;">Dermal Professional</span></p>
+              <p style="margin: 6px 0 0; padding: 10px 13px; border-radius: 4px 14px 14px 14px; background: #F7F3EA; font-size: 13px; line-height: 1.5;">Thanks for the new photos. Let’s keep your routine the same for two more weeks, then check in again.</p>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 18px; padding: 9px 12px 9px 16px; border: 1px solid #e5e2d8; border-radius: 999px; font-size: 12.5px; color: #6f7460;"><span>Write a message</span><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 11.5l-7.8 7.8a5 5 0 0 1-7.1-7.1l8.1-8.1a3.4 3.4 0 0 1 4.8 4.8l-8 8a1.7 1.7 0 0 1-2.4-2.4l7.4-7.4"></path></svg></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="compare" aria-labelledby="compare-title" style="padding: clamp(56px, 7.2cqw, 104px) 0;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4cqw, 56px); box-sizing: border-box;">
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 48px;">
+      <h2 id="compare-title" style="margin: 0; flex: 1 1 420px; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.3cqw, 46px); line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance;">Why see a dermal professional online?</h2>
+      <p style="margin: 0; flex: 0 1 470px; font-size: clamp(17px, 1.25cqw, 18px); line-height: 1.6; color: #4a4e3f;">Professional advice without the travel, and support that carries on after your consult.</p>
+    </div>
+    <div style="margin-top: clamp(36px, 3.9cqw, 56px); overflow: hidden; border-radius: clamp(16px, 1.7cqw, 24px); border: 1px solid #e5e2d8; background: #FFFFFF;">
+      <table style="width: 100%; border-collapse: collapse; font-size: clamp(12.5px, 1.1cqw, 15.5px);">
+        <thead>
+          <tr>
+            <th scope="col" style="width: 42%; padding: clamp(14px, 1.5cqw, 22px); text-align: left; font-weight: 400;"><span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;">Feature</span></th>
+            <th scope="col" style="padding: clamp(14px, 1.5cqw, 22px) 8px; background: #6f7460; color: #FFFCF5; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(13.5px, 1.25cqw, 18px);">DermDesk</th>
+            <th scope="col" style="padding: clamp(14px, 1.5cqw, 22px) 8px; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(13.5px, 1.25cqw, 18px);">Clinic visit</th>
+            <th scope="col" style="padding: clamp(14px, 1.5cqw, 22px) 8px; font-family: 'Fraunces', Georgia, serif; font-weight: 500; font-size: clamp(13.5px, 1.25cqw, 18px);">On your own</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" style="padding: clamp(12px, 1.25cqw, 18px) clamp(12px, 1.5cqw, 22px); border-top: 1px solid #e5e2d8; text-align: left; font-weight: 400; line-height: 1.45;">Advice from a qualified dermal professional</th>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; background: rgba(138,142,117,0.08); text-align: center; color: #6f7460;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes" style="margin: 0 auto;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.3l2.7 2.7 5.5-5.5"></path></svg></td>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; text-align: center; color: #6f7460;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes" style="margin: 0 auto;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.3l2.7 2.7 5.5-5.5"></path></svg></td>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; text-align: center; color: #9b9686;" aria-label="No">—</td>
+          </tr>
+          <tr>
+            <th scope="row" style="padding: clamp(12px, 1.25cqw, 18px) clamp(12px, 1.5cqw, 22px); border-top: 1px solid #e5e2d8; text-align: left; font-weight: 400; line-height: 1.45;">Consult from home, with no travel or waiting room</th>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; background: rgba(138,142,117,0.08); text-align: center; color: #6f7460;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes" style="margin: 0 auto;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.3l2.7 2.7 5.5-5.5"></path></svg></td>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; text-align: center; color: #9b9686;" aria-label="No">—</td>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; text-align: center; color: #6f7460;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes" style="margin: 0 auto;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.3l2.7 2.7 5.5-5.5"></path></svg></td>
+          </tr>
+          <tr>
+            <th scope="row" style="padding: clamp(12px, 1.25cqw, 18px) clamp(12px, 1.5cqw, 22px); border-top: 1px solid #e5e2d8; text-align: left; font-weight: 400; line-height: 1.45;">Photos and skin history shared before you meet</th>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; background: rgba(138,142,117,0.08); text-align: center; color: #6f7460;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes" style="margin: 0 auto;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.3l2.7 2.7 5.5-5.5"></path></svg></td>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; text-align: center; font-size: 0.88em; color: #6f7460;">Varies</td>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; text-align: center; color: #9b9686;" aria-label="No">—</td>
+          </tr>
+          <tr>
+            <th scope="row" style="padding: clamp(12px, 1.25cqw, 18px) clamp(12px, 1.5cqw, 22px); border-top: 1px solid #e5e2d8; text-align: left; font-weight: 400; line-height: 1.45;">A step-by-step routine made for your skin</th>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; background: rgba(138,142,117,0.08); text-align: center; color: #6f7460;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes" style="margin: 0 auto;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.3l2.7 2.7 5.5-5.5"></path></svg></td>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; text-align: center; color: #6f7460;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes" style="margin: 0 auto;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.3l2.7 2.7 5.5-5.5"></path></svg></td>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; text-align: center; color: #9b9686;" aria-label="No">—</td>
+          </tr>
+          <tr>
+            <th scope="row" style="padding: clamp(12px, 1.25cqw, 18px) clamp(12px, 1.5cqw, 22px); border-top: 1px solid #e5e2d8; text-align: left; font-weight: 400; line-height: 1.45;">Message your dermal professional between consults</th>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; background: rgba(138,142,117,0.08); text-align: center; color: #6f7460;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes" style="margin: 0 auto;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.3l2.7 2.7 5.5-5.5"></path></svg></td>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; text-align: center; font-size: 0.88em; color: #6f7460;">Varies</td>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; text-align: center; color: #9b9686;" aria-label="No">—</td>
+          </tr>
+          <tr>
+            <th scope="row" style="padding: clamp(12px, 1.25cqw, 18px) clamp(12px, 1.5cqw, 22px); border-top: 1px solid #e5e2d8; text-align: left; font-weight: 400; line-height: 1.45;">Progress photos tracked over time</th>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; background: rgba(138,142,117,0.08); text-align: center; color: #6f7460;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Yes" style="margin: 0 auto;"><circle cx="12" cy="12" r="9"></circle><path d="M8 12.3l2.7 2.7 5.5-5.5"></path></svg></td>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; text-align: center; font-size: 0.88em; color: #6f7460;">Varies</td>
+            <td style="padding: 12px 8px; border-top: 1px solid #e5e2d8; text-align: center; color: #9b9686;" aria-label="No">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="faq" aria-labelledby="faq-title" style="padding: clamp(56px, 7.2cqw, 104px) 0; background: #FFFFFF; border-top: 1px solid #e5e2d8;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4cqw, 56px); box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: flex-start; gap: 36px 72px;">
+    <div style="flex: 1 1 320px; max-width: 420px;">
+      <h2 id="faq-title" style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.3cqw, 46px); line-height: 1.12; letter-spacing: -0.02em;">Common questions</h2>
+      <p style="margin: 18px 0 0; font-size: clamp(17px, 1.25cqw, 18px); line-height: 1.6; color: #4a4e3f;">Can’t find what you’re looking for? <a href="/contact" style="color: #1a1a1a; font-weight: 500; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px;">Contact us</a>.</p>
+      <a href="https://app.dermdesk.com.au/signup" style="display: inline-flex; align-items: center; justify-content: center; height: 54px; margin-top: 28px; padding: 0 30px; border-radius: 999px; background: #6f7460; color: #FFFCF5; font-size: 15.5px; font-weight: 500; text-decoration: none; white-space: nowrap; box-sizing: border-box;">Create your free account</a>
+    </div>
+    <div style="flex: 1.5 1 460px; min-width: 0; border-bottom: 1px solid #D5C7AD;">
+      <details open="" style="border-top: 1px solid #D5C7AD;"><summary style="list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; cursor: pointer;"><h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(18.5px, 1.5cqw, 21px); line-height: 1.35;">Who are the dermal professionals?</h3><span style="width: 34px; height: 34px; flex: none; border-radius: 50%; border: 1px solid #D5C7AD; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary><p style="margin: 0; padding: 0 clamp(0px, 4cqw, 58px) 24px 0; max-width: 60ch; font-size: 16px; line-height: 1.65; color: #4a4e3f;">Qualified dermal clinicians and therapists who have applied to DermDesk and been reviewed by our team. Each profile shows their focus areas and experience, so you can choose who you see.</p></details>
+      <details style="border-top: 1px solid #D5C7AD;"><summary style="list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; cursor: pointer;"><h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(18.5px, 1.5cqw, 21px); line-height: 1.35;">Can I choose my dermal professional?</h3><span style="width: 34px; height: 34px; flex: none; border-radius: 50%; border: 1px solid #D5C7AD; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary><p style="margin: 0; padding: 0 clamp(0px, 4cqw, 58px) 24px 0; max-width: 60ch; font-size: 16px; line-height: 1.65; color: #4a4e3f;">Yes. When you book, you can see each dermal professional’s focus areas and experience, and choose who you’d like to see.</p></details>
+      <details style="border-top: 1px solid #D5C7AD;"><summary style="list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; cursor: pointer;"><h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(18.5px, 1.5cqw, 21px); line-height: 1.35;">What can you help with online?</h3><span style="width: 34px; height: 34px; flex: none; border-radius: 50%; border: 1px solid #D5C7AD; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary><p style="margin: 0; padding: 0 clamp(0px, 4cqw, 58px) 24px 0; max-width: 60ch; font-size: 16px; line-height: 1.65; color: #4a4e3f;">Common concerns like acne, pigmentation, rosacea, eczema and scarring, as well as building a routine that suits your skin. If something needs to be seen in person, your dermal professional will let you know.</p></details>
+      <details style="border-top: 1px solid #D5C7AD;"><summary style="list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; cursor: pointer;"><h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(18.5px, 1.5cqw, 21px); line-height: 1.35;">How much does a consult cost?</h3><span style="width: 34px; height: 34px; flex: none; border-radius: 50%; border: 1px solid #D5C7AD; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary><p style="margin: 0; padding: 0 clamp(0px, 4cqw, 58px) 24px 0; max-width: 60ch; font-size: 16px; line-height: 1.65; color: #4a4e3f;">An initial consultation is $149, a follow-up is $99 and a quick review is $59. You’ll see the price before you book, and you pay securely when you book.</p></details>
+      <details style="border-top: 1px solid #D5C7AD;"><summary style="list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; cursor: pointer;"><h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(18.5px, 1.5cqw, 21px); line-height: 1.35;">How long is a consult?</h3><span style="width: 34px; height: 34px; flex: none; border-radius: 50%; border: 1px solid #D5C7AD; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary><p style="margin: 0; padding: 0 clamp(0px, 4cqw, 58px) 24px 0; max-width: 60ch; font-size: 16px; line-height: 1.65; color: #4a4e3f;">Initial consultations are 45 minutes, follow-ups are 30 minutes and quick reviews are 15 minutes.</p></details>
+      <details style="border-top: 1px solid #D5C7AD;"><summary style="list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; cursor: pointer;"><h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(18.5px, 1.5cqw, 21px); line-height: 1.35;">What do I need for a video consult?</h3><span style="width: 34px; height: 34px; flex: none; border-radius: 50%; border: 1px solid #D5C7AD; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary><p style="margin: 0; padding: 0 clamp(0px, 4cqw, 58px) 24px 0; max-width: 60ch; font-size: 16px; line-height: 1.65; color: #4a4e3f;">A phone or computer with a camera and a good internet connection. Natural light helps your dermal professional see your skin clearly. You join from your DermDesk account.</p></details>
+      <details style="border-top: 1px solid #D5C7AD;"><summary style="list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; cursor: pointer;"><h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(18.5px, 1.5cqw, 21px); line-height: 1.35;">What happens after my consult?</h3><span style="width: 34px; height: 34px; flex: none; border-radius: 50%; border: 1px solid #D5C7AD; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary><p style="margin: 0; padding: 0 clamp(0px, 4cqw, 58px) 24px 0; max-width: 60ch; font-size: 16px; line-height: 1.65; color: #4a4e3f;">Your dermal professional shares your treatment plan in your account. You can upload progress photos, message your dermal professional and book a follow-up when you’re ready.</p></details>
+      <details style="border-top: 1px solid #D5C7AD;"><summary style="list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; cursor: pointer;"><h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(18.5px, 1.5cqw, 21px); line-height: 1.35;">Can I message my dermal professional between consults?</h3><span style="width: 34px; height: 34px; flex: none; border-radius: 50%; border: 1px solid #D5C7AD; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary><p style="margin: 0; padding: 0 clamp(0px, 4cqw, 58px) 24px 0; max-width: 60ch; font-size: 16px; line-height: 1.65; color: #4a4e3f;">Yes. You can message your dermal professional from your account and share photos or PDFs.</p></details>
+      <details style="border-top: 1px solid #D5C7AD;"><summary style="list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 22px 0; cursor: pointer;"><h3 style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(18.5px, 1.5cqw, 21px); line-height: 1.35;">Is my information private?</h3><span style="width: 34px; height: 34px; flex: none; border-radius: 50%; border: 1px solid #D5C7AD; color: #6f7460; display: flex; align-items: center; justify-content: center;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span></summary><p style="margin: 0; padding: 0 clamp(0px, 4cqw, 58px) 24px 0; max-width: 60ch; font-size: 16px; line-height: 1.65; color: #4a4e3f;">Yes. Your photos and consultation notes are always private to you and your dermal professional, and payments are processed by Stripe.</p></details>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="cta-title" style="padding: clamp(72px, 7.8cqw, 112px) 0; background: #6f7460; color: #FFFCF5;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4cqw, 56px); box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 48px 64px;">
+    <div style="flex: 1 1 520px; max-width: 680px;">
+      <h2 id="cta-title" style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-weight: 400; font-size: clamp(32px, 3.3cqw, 46px); line-height: 1.12; letter-spacing: -0.02em; text-wrap: balance;">Get a dermal professional’s view on your skin</h2>
+      <p style="margin: 18px 0 0; max-width: 48ch; font-size: clamp(17px, 1.25cqw, 18px); line-height: 1.6;">Create your free account in under a minute. You only pay when you book a consult.</p>
+      <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 18px 28px; margin-top: 36px;">
+        <a href="https://app.dermdesk.com.au/signup" style="display: inline-flex; align-items: center; justify-content: center; height: 54px; padding: 0 30px; border-radius: 999px; background: #FFFCF5; color: #1a1a1a; font-size: 15.5px; font-weight: 500; text-decoration: none; white-space: nowrap; box-sizing: border-box;">Create your free account</a>
+        <span style="font-size: 15px;">Already have an account? <a href="https://app.dermdesk.com.au/login" style="color: #FFFCF5; font-weight: 500; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px;">Sign in</a></span>
+      </div>
+      <ul style="list-style: none; margin: 30px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 14.5px;">
+        <li style="display: flex; align-items: center; gap: 8px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>Qualified, reviewed dermal professionals</li>
+        <li style="display: flex; align-items: center; gap: 8px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>Video consults from home</li>
+        <li style="display: flex; align-items: center; gap: 8px;"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"></path></svg>No subscription</li>
+      </ul>
+    </div>
+    <aside aria-label="For dermal professionals" style="flex: 0 1 360px; padding-top: 24px; border-top: 1px solid rgba(255,252,245,0.4);">
+      <p style="margin: 0; font-family: 'Fraunces', Georgia, serif; font-size: 24px; line-height: 1.3;">Are you a dermal professional?</p>
+      <p style="margin: 8px 0 0; font-size: 15px; line-height: 1.55;">Consult clients online, on your own hours.</p>
+      <a href="/clinicians" style="display: inline-block; margin-top: 14px; color: #FFFCF5; font-size: 15.5px; font-weight: 500; text-decoration: underline; text-underline-offset: 5px; text-decoration-thickness: 1px;">See how to join DermDesk</a>
+    </aside>
+  </div>
+</section>
+
+<footer style="padding: clamp(64px, 6.1cqw, 88px) 0 40px;">
+  <div style="max-width: 1240px; margin: 0 auto; padding: 0 clamp(20px, 4cqw, 56px); box-sizing: border-box;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 48px 64px;">
+      <div style="flex: 1 1 300px; max-width: 380px;">
+        <img src="/assets/mark-sage.svg" alt="DermDesk" style="display: block; height: 78px; width: auto;">
+        <p style="margin: 22px 0 0; max-width: 30ch; font-size: 14.5px; line-height: 1.55; color: #6f7460;">Online skin consultations with qualified dermal clinicians and therapists, across Australia.</p>
+      </div>
+      <nav aria-label="Footer" style="flex: 1 1 480px; max-width: 620px; display: flex; flex-wrap: wrap; gap: 32px 24px;">
+        <div style="flex: 1 1 150px;">
+          <p style="margin: 0 0 14px; font-size: 13.5px; font-weight: 600;">Clients</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 14.5px;">
+            <li><a href="https://app.dermdesk.com.au/signup" style="color: #6f7460; text-decoration: none;">Create an account</a></li>
+            <li><a href="https://app.dermdesk.com.au/login" style="color: #6f7460; text-decoration: none;">Sign in</a></li>
+            <li><a href="#how-it-works" style="color: #6f7460; text-decoration: none;">How it works</a></li>
+            <li><a href="#pricing" style="color: #6f7460; text-decoration: none;">Pricing</a></li>
+          </ul>
+        </div>
+        <div style="flex: 1 1 150px;">
+          <p style="margin: 0 0 14px; font-size: 13.5px; font-weight: 600;">Dermal professionals</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 14.5px;">
+            <li><a href="/clinicians" style="color: #6f7460; text-decoration: none;">For dermal professionals</a></li>
+            <li><a href="https://app.dermdesk.com.au/apply" style="color: #6f7460; text-decoration: none;">Apply to join</a></li>
+            <li><a href="https://app.dermdesk.com.au/login" style="color: #6f7460; text-decoration: none;">Dermal professional sign in</a></li>
+          </ul>
+        </div>
+        <div style="flex: 1 1 150px;">
+          <p style="margin: 0 0 14px; font-size: 13.5px; font-weight: 600;">DermDesk</p>
+          <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; font-size: 14.5px;">
+            <li><a href="/about" style="color: #6f7460; text-decoration: none;">About</a></li>
+            <li><a href="/contact" style="color: #6f7460; text-decoration: none;">Contact</a></li>
+            <li><a href="/privacy" style="color: #6f7460; text-decoration: none;">Privacy Policy</a></li>
+            <li><a href="/terms" style="color: #6f7460; text-decoration: none;">Terms of Service</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; margin-top: clamp(48px, 5cqw, 72px); padding-top: 24px; border-top: 1px solid #e5e2d8; font-size: 13px; line-height: 1.5; color: #6f7460;">
+      <p style="margin: 0;">© 2026 DermDesk</p>
+      <p style="margin: 0;">DermDesk isn’t an emergency service. If you need urgent medical help, call 000.</p>
+    </div>
+  </div>
+</footer>
+</div>
+
+</div>
+<script>(function(){
+  var root=document.documentElement;
+  function setMenu(open){
+    if(open)root.setAttribute('data-menu','open');else root.removeAttribute('data-menu');
+    document.querySelectorAll('[data-dd="toggle-menu"]').forEach(function(b){
+      b.setAttribute('aria-expanded',open?'true':'false');
+      b.setAttribute('aria-label',open?'Close menu':'Open menu');
+    });
+  }
+  function setMore(open){
+    document.querySelectorAll('.dd-more').forEach(function(m){m.classList.toggle('is-open',open)});
+    document.querySelectorAll('[data-dd="toggle-more"]').forEach(function(b){b.setAttribute('aria-expanded',open?'true':'false')});
+  }
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-dd]');
+    var act=t&&t.getAttribute('data-dd');
+    if(act==='toggle-menu'){setMenu(root.getAttribute('data-menu')!=='open');return}
+    if(act==='close-menu'){setMenu(false);return}
+    if(act==='toggle-more'){setMore(!document.querySelector('.dd-more.is-open'));return}
+    if(!e.target.closest('.dd-more'))setMore(false);
+  });
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){setMenu(false);setMore(false)}});
+  window.addEventListener('resize',function(){if(window.innerWidth>=1180)setMenu(false);else setMore(false)});
+})();</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<section class="pg-hero">
+  <div class="pg-wrap">
+    <p class="pg-eyebrow">Contact</p>
+    <h1 class="pg-title">Get in touch</h1>
+    <p class="pg-lede">Questions about DermDesk, your account or joining as a dermal professional? Send us a message and we’ll get back to you within {{REPLY_TIME}}.</p>
+  </div>
+</section>
+
+<section class="pg-section pg-section-tight">
+  <div class="pg-wrap pg-contact">
+    <div class="pg-contact-info">
+      <div class="pg-notice">
+        <strong>Need urgent medical help?</strong>
+        DermDesk isn’t an emergency service. Call 000, or see your GP or nearest emergency department.
+      </div>
+      <dl class="pg-contact-list">
+        <div>
+          <dt>General and account help</dt>
+          <dd><a href="mailto:{{EMAIL_SUPPORT}}">{{EMAIL_SUPPORT}}</a></dd>
+        </div>
+        <div>
+          <dt>Dermal professionals and applications</dt>
+          <dd><a href="mailto:{{EMAIL_PROS}}">{{EMAIL_PROS}}</a></dd>
+        </div>
+        <div>
+          <dt>Privacy requests and complaints</dt>
+          <dd><a href="mailto:{{EMAIL_PRIVACY}}">{{EMAIL_PRIVACY}}</a></dd>
+        </div>
+        <div>
+          <dt>Postal address</dt>
+          <dd>{{LEGAL_NAME}}<br>{{ADDRESS}}</dd>
+        </div>
+      </dl>
+      <p class="pg-small">If you’re a client with a question about your skin or treatment plan, the quickest way to get an answer is to message your dermal professional from your <a href="https://app.dermdesk.com.au/login">DermDesk account</a>.</p>
+    </div>
+
+    <form class="pg-form" id="contact-form" novalidate>
+      <fieldset class="pg-field">
+        <legend>I am a</legend>
+        <div class="pg-chips">
+          <label><input type="radio" name="role" value="Client" checked><span>Client</span></label>
+          <label><input type="radio" name="role" value="Dermal professional"><span>Dermal professional</span></label>
+          <label><input type="radio" name="role" value="Other"><span>Other</span></label>
+        </div>
+      </fieldset>
+      <div class="pg-field-row">
+        <label class="pg-field">
+          <span>Name</span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label class="pg-field">
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+      </div>
+      <label class="pg-field">
+        <span>Subject</span>
+        <input type="text" name="subject" required>
+      </label>
+      <label class="pg-field">
+        <span>Message</span>
+        <textarea name="message" rows="6" required></textarea>
+      </label>
+      <p class="pg-small">Please don’t include medical details or photos here. By sending this form you agree to us handling your information as set out in our <a href="/privacy">Privacy Policy</a>.</p>
+      <p class="pg-form-error" id="contact-error" role="alert" hidden></p>
+      <button class="pg-btn" type="submit">Send message</button>
+    </form>
+    <div class="pg-form-done" id="contact-done" hidden tabindex="-1">
+      <h2 class="pg-h3">Thanks, we’ve got your message</h2>
+      <p>We’ll reply to the email you gave us within {{REPLY_TIME}}.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var ENDPOINT = '{{FORM_ENDPOINT}}';
+  var TO = '{{EMAIL_SUPPORT}}';
+  var form = document.getElementById('contact-form');
+  var err = document.getElementById('contact-error');
+  var done = document.getElementById('contact-done');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    err.hidden = true;
+    if (!form.checkValidity()) {
+      var bad = form.querySelector(':invalid');
+      err.textContent = 'Please fill in every field' + (bad && bad.type === 'email' ? ' and check your email address.' : '.');
+      err.hidden = false;
+      if (bad) bad.focus();
+      return;
+    }
+    var d = Object.fromEntries(new FormData(form));
+    if (!/^https?:\/\//.test(ENDPOINT)) {
+      // No form endpoint configured yet: open the visitor's email app instead.
+      var body = d.message + '\n\n' + d.name + ' (' + d.role + ')\n' + d.email;
+      location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(d.subject) + '&body=' + encodeURIComponent(body);
+      return;
+    }
+    var btn = form.querySelector('button');
+    btn.disabled = true; btn.textContent = 'Sending…';
+    fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify(d) })
+      .then(function(r){ if (!r.ok) throw new Error(r.status); form.hidden = true; done.hidden = false; done.focus(); })
+      .catch(function(){
+        err.textContent = 'Sorry, something went wrong. Please try again, or email us at ' + TO + '.';
+        err.hidden = false; btn.disabled = false; btn.textContent = 'Send message';
+      });
+  });
+})();
+</script>
