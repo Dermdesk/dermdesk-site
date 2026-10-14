@@ -2,18 +2,29 @@
 
 Usage: python3 build.py   (writes ./site)
 """
-import os, re, shutil
+import json, os, re, shutil
+from html import unescape
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(ROOT, "_unpacked")
 OUT = os.path.join(ROOT, "site")
 ACCENT = "#6f7460"
+SITE_URL = "https://dermdesk.com.au"
+
+# Social preview images (1200x630), cropped once from the hero photos in _unpacked/
+OG_IMAGES = {
+    "og-home.jpg": "A woman smiling on a video consult from her laptop at home",
+    "og-pro.jpg": "A dermal professional in scrubs and a headset running an online consult on her laptop",
+}
+# Above-the-fold photos load first; other images (except the header logos) load lazily
+HERO_IMAGES = {"assets/member-hero.jpg", "assets/pro-consult.jpg"}
+EAGER_IMAGES = {"assets/logo-sage.svg", "assets/logo-cream.svg"}
 
 PAGES = {
     "index.html": {
         "dir": "member",
         "title": "DermDesk | Online skin consultations with dermal professionals",
-        "desc": "See a qualified dermal professional over video, from home. Get a treatment plan made for your skin, track your progress and message your dermal professional between consults.",
+        "desc": "See a qualified dermal professional over video, from home. Get a treatment plan for your skin and message your dermal professional between consults.",
         "assets": {
             "2ac21878-e10a-444c-bb74-fcc6feff3a8a": "assets/logo-sage.svg",
             "bca02ea1-8953-4ed5-92ba-01e134b1ec19": "assets/mark-sage.svg",
@@ -27,6 +38,7 @@ PAGES = {
         "dir": "clinician",
         "title": "DermDesk for dermal professionals | Consult clients online",
         "desc": "The telehealth platform for dermal professionals. Consult clients over video, build treatment plans and get paid through Stripe, on your own hours.",
+        "og": "og-pro.jpg",
         "assets": {
             "7f8c9a0c-f69d-4359-8cd1-33b67ee0f11d": "assets/logo-cream.svg",
             "2e06af46-89b6-401c-92f2-84a1fba0cdbf": "assets/mark-sage.svg",
@@ -156,6 +168,76 @@ JS = """
 """
 
 
+def image_size(path):
+    """(width, height) of an SVG or JPEG, read from the file header (no libraries needed)."""
+    data = open(path, "rb").read()
+    if path.endswith(".svg"):
+        tag = re.search(rb"<svg[^>]*>", data).group(0)
+        return tuple(int(re.search(rb'\b' + k + rb'="(\d+)', tag).group(1)) for k in (b"width", b"height"))
+    i = 2  # JPEG: walk the segments until the SOF header that holds the size
+    while data[i + 1] not in (0xC0, 0xC1, 0xC2):
+        i += 2 + int.from_bytes(data[i + 2:i + 4], "big")
+    return int.from_bytes(data[i + 7:i + 9], "big"), int.from_bytes(data[i + 5:i + 7], "big")
+
+
+def img_attrs(body):
+    # width/height let the browser reserve space before the image arrives (CSS still sets the size)
+    def add(m):
+        path = m.group(1)
+        w, h = image_size(os.path.join(OUT, path))
+        extra = f' width="{w}" height="{h}"'
+        if path in HERO_IMAGES:
+            extra += ' fetchpriority="high"'
+        elif path not in EAGER_IMAGES:
+            extra += ' loading="lazy" decoding="async"'
+        return m.group(0) + extra
+    return re.sub(r'<img src="/(assets/[^"]+)"', add, body)
+
+
+def clean_path(name):
+    return "/" if name == "index.html" else "/" + name[:-len(".html")]
+
+
+def json_ld(data):
+    text = json.dumps({"@context": "https://schema.org", "@graph": data}, ensure_ascii=False, indent=1)
+    text = text.replace("</", "<\\/")  # never close the <script> tag early
+    return f'<script type="application/ld+json">\n{text}\n</script>\n'
+
+
+def org_schema():
+    org = {
+        "@type": "Organization",
+        "@id": f"{SITE_URL}/#organization",
+        "name": "DermDesk",
+        "legalName": CONFIG["LEGAL_NAME"],
+        "url": f"{SITE_URL}/",
+        "logo": f"{SITE_URL}/assets/mark-sage.svg",
+        "description": SUBPAGES["about.html"][1],
+        "areaServed": {"@type": "Country", "name": "Australia"},
+        "email": CONFIG["EMAIL_SUPPORT"],
+    }
+    site = {
+        "@type": "WebSite",
+        "@id": f"{SITE_URL}/#website",
+        "url": f"{SITE_URL}/",
+        "name": "DermDesk",
+        "inLanguage": "en-AU",
+        "publisher": {"@id": org["@id"]},
+    }
+    return [{k: v for k, v in org.items() if v is not None}, site]
+
+
+def faq_schema(body):
+    # Built from the page's own FAQ, so the structured data always matches the visible text
+    plain = lambda h: re.sub(r"\s+", " ", unescape(re.sub(r"<[^>]+>", " ", h))).strip()
+    qa = re.findall(r"<details[^>]*><summary[^>]*><h3[^>]*>(.*?)</h3>.*?</summary>(.*?)</details>", body, re.S)
+    return {
+        "@type": "FAQPage",
+        "mainEntity": [{"@type": "Question", "name": plain(q),
+                        "acceptedAnswer": {"@type": "Answer", "text": plain(a)}} for q, a in qa],
+    }
+
+
 def build_page(name, cfg):
     d = os.path.join(SRC, cfg["dir"])
     tpl = open(os.path.join(d, "template.html"), encoding="utf-8").read()
@@ -173,15 +255,21 @@ def build_page(name, cfg):
         shutil.copyfile(src, dst)
         body = body.replace(f'"{uuid}"', f'"/{path}"')
         blocks = [b.replace(f'"{uuid}"', f'"/{path}"') for b in blocks]
-    body = apply_copy(convert(body))
+    body = img_attrs(apply_copy(convert(body)))
     if name == "clinicians.html":
         body = body.replace('href="#how-it-works"', 'href="/#how-it-works"').replace('href="#pricing"', 'href="/#pricing"')
     font_css = "\n".join(blocks)
-    write_html(name, cfg["title"], cfg["desc"], font_css, body)
+    schema = [faq_schema(body)]
+    if name == "index.html":
+        schema = org_schema() + schema
+    write_html(name, cfg["title"], cfg["desc"], font_css, body, json_ld(schema), cfg.get("og", "og-home.jpg"))
     return body, font_css
 
 
-def write_html(name, title, desc, font_css, body, extra_head=""):
+def write_html(name, title, desc, font_css, body, extra_head="", og_image="og-home.jpg"):
+    url = SITE_URL + clean_path(name)
+    og_w, og_h = image_size(os.path.join(OUT, "assets", og_image))
+    og_alt = OG_IMAGES[og_image]
     html = f"""<!DOCTYPE html>
 <html lang="en-AU">
 <head>
@@ -189,9 +277,22 @@ def write_html(name, title, desc, font_css, body, extra_head=""):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
+<link rel="canonical" href="{url}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DermDesk">
+<meta property="og:locale" content="en_AU">
+<meta property="og:url" content="{url}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
-<meta property="og:type" content="website">
+<meta property="og:image" content="{SITE_URL}/assets/{og_image}">
+<meta property="og:image:width" content="{og_w}">
+<meta property="og:image:height" content="{og_h}">
+<meta property="og:image:alt" content="{og_alt}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{title}">
+<meta name="twitter:description" content="{desc}">
+<meta name="twitter:image" content="{SITE_URL}/assets/{og_image}">
+<meta name="twitter:image:alt" content="{og_alt}">
 <meta name="theme-color" content="#FFFCF5">
 <link rel="icon" type="image/svg+xml" href="/assets/mark-sage.svg">
 <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -237,8 +338,8 @@ CONFIG = {
 }
 
 SUBPAGES = {
-    "about.html": ("About DermDesk", "DermDesk connects people across Australia with qualified dermal clinicians and therapists over video, with ongoing support after every consult."),
-    "contact.html": ("Contact DermDesk", "Get in touch with DermDesk about your account, consultations or joining as a dermal professional."),
+    "about.html": ("About DermDesk | Online skin consultations in Australia", "DermDesk connects people across Australia with qualified dermal clinicians and therapists over video, with ongoing support after every consult."),
+    "contact.html": ("Contact DermDesk | Help for clients and dermal professionals", "Get in touch with DermDesk about your account, consultations or joining as a dermal professional."),
     "privacy.html": ("Privacy Policy | DermDesk", "How DermDesk collects, uses, shares and protects your personal and health information."),
     "terms.html": ("Terms of Service | DermDesk", "The terms that apply when you use DermDesk as a client or a dermal professional."),
 }
@@ -281,15 +382,27 @@ def build_subpages(home_body, font_css):
 
 if __name__ == "__main__":
     shutil.rmtree(OUT, ignore_errors=True)
-    os.makedirs(OUT)
+    os.makedirs(os.path.join(OUT, "assets"))
+    for og in OG_IMAGES:
+        shutil.copyfile(os.path.join(SRC, og), os.path.join(OUT, "assets", og))
     bodies = {}
     for name, cfg in PAGES.items():
         body, font_css = build_page(name, cfg)
         bodies[name] = body
-        text = re.sub(r'href="[^"]*"', "", body).replace("dermal clinicians and therapists", "")
+    todo = build_subpages(bodies["index.html"], font_css)
+    # Check every finished page, head and structured data included (URLs are allowed to say "clinicians")
+    for name in [*PAGES, *SUBPAGES]:
+        text = open(os.path.join(OUT, name), encoding="utf-8").read()
+        text = re.sub(r'href="[^"]*"|https?://[^\s"<]+', "", text).replace("dermal clinicians and therapists", "")
         left = re.findall(r"(?i)[^>]{0,40}clinician[^<]{0,40}", text)
         print(name, "remaining 'clinician' text:", left or "none")
-    todo = build_subpages(bodies["index.html"], font_css)
+    # Search engines: every public page, by its clean URL (links into the app are not part of this site)
+    urls = "".join(f"  <url><loc>{SITE_URL}{clean_path(n)}</loc></url>\n" for n in [*PAGES, *SUBPAGES])
+    open(os.path.join(OUT, "sitemap.xml"), "w", encoding="utf-8").write(
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        f'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n')
+    open(os.path.join(OUT, "robots.txt"), "w", encoding="utf-8").write(
+        f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n")
     # Clean URLs (/about -> about.html) on Apache hosts; Netlify/Vercel/Cloudflare Pages do this already
     open(os.path.join(OUT, ".htaccess"), "w").write(
         "Options -MultiViews\nRewriteEngine On\n"

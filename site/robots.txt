@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dermdesk.com.au/sitemap.xml

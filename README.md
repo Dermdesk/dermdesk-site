@@ -14,7 +14,9 @@ site/
   contact.html        /contact
   privacy.html        /privacy
   terms.html          /terms
-  assets/             images, fonts, pages.css
+  assets/             images, fonts, pages.css, og-*.jpg social previews
+  sitemap.xml         all public pages, for search engines
+  robots.txt          allows crawling, points to the sitemap
   .htaccess           clean URLs on Apache
 ```
 
@@ -46,3 +48,6 @@ python3 build.py      # Python 3.9+, no dependencies; regenerates site/
   - `COPY`: client wording rules. "Clinician" never appears bare; use "dermal professional(s)" or "dermal clinicians and therapists".
   - `CONFIG`: business details used to fill the placeholders.
   - `PAGES` and `SUBPAGES`: titles and meta descriptions.
+  - `SITE_URL`: the domain used for canonical links, Open Graph tags, JSON-LD and the sitemap.
+- `_unpacked/og-home.jpg` and `_unpacked/og-pro.jpg` are 1200×630 social preview crops of the hero photos (`og-pro` is used on /clinicians).
+- Structured data (JSON-LD) is generated: Organization and WebSite on the home page, and FAQPage from each page's own FAQ, so it always matches the visible text.
