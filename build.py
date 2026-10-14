@@ -215,25 +215,25 @@ body{{margin:0;background:#FFFCF5}}
 # Business details the client must confirm. None = not known yet: shown on the
 # page as a yellow highlighted placeholder so it can't be missed before launch.
 CONFIG = {
-    "LEGAL_NAME": None,          # e.g. "DermDesk Pty Ltd"
-    "ABN": None,
-    "ADDRESS": None,             # postal address for privacy requests / notices
+    "LEGAL_NAME": "Karlee Jayne Sandland",
+    "ABN": "68 462 811 099",
+    "ADDRESS": "3 Porter Road, Warrnambool VIC 3280",  # postal address for privacy requests / notices
     "EMAIL_SUPPORT": None,       # e.g. hello@dermdesk.com.au
     "EMAIL_PROS": None,          # e.g. partners@dermdesk.com.au
     "EMAIL_PRIVACY": None,       # e.g. privacy@dermdesk.com.au
-    "EFFECTIVE_DATE": None,      # date the policies go live
+    "EFFECTIVE_DATE": "14 October 2026",  # date the policies go live
     "FORM_ENDPOINT": "",         # contact form POST URL; empty = opens visitor's email app
     "REPLY_TIME": "two business days",
     "MIN_AGE": "18",
     "UNDER_AGE_POLICY": "If you are under 18, please don’t create an account or book a consultation.",
-    "VIDEO_RECORDING": None,     # e.g. "Consultations are not recorded."
-    "DATA_LOCATION": None,       # e.g. "We store your information on servers in Australia."
-    "OVERSEAS_COUNTRIES": None,  # e.g. "the United States"
-    "GST_NOTE": None,            # e.g. " and include GST where it applies" (keep leading space)
-    "CANCEL_WINDOW": None,       # e.g. "24 hours"
+    "VIDEO_RECORDING": "Consultations are not recorded, and we do not store the audio or video of your consultation.",
+    "DATA_LOCATION": "Your personal information, including health information, is stored on servers located in the United States.",
+    "OVERSEAS_COUNTRIES": "the United States",
+    "GST_NOTE": " and include GST where applicable",  # keep leading space
+    "CANCEL_WINDOW": "48 hours",
     "REFUND_DAYS": "5–10 business days",
-    "PLATFORM_FEE": None,        # e.g. "15% of each consultation fee"
-    "GOVERNING_STATE": None,     # e.g. "New South Wales"
+    "PLATFORM_FEE": "5% of each consultation fee",
+    "GOVERNING_STATE": "Victoria",
 }
 
 SUBPAGES = {
