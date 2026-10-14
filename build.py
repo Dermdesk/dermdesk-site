@@ -319,9 +319,9 @@ CONFIG = {
     "LEGAL_NAME": "Karlee Jayne Sandland",
     "ABN": "68 462 811 099",
     "ADDRESS": "3 Porter Road, Warrnambool VIC 3280",  # postal address for privacy requests / notices
-    "EMAIL_SUPPORT": None,       # e.g. hello@dermdesk.com.au
-    "EMAIL_PROS": None,          # e.g. partners@dermdesk.com.au
-    "EMAIL_PRIVACY": None,       # e.g. privacy@dermdesk.com.au
+    "EMAIL_SUPPORT": "hello@dermdesk.com.au",
+    "EMAIL_PROS": "hello@dermdesk.com.au",
+    "EMAIL_PRIVACY": "hello@dermdesk.com.au",
     "EFFECTIVE_DATE": "14 October 2026",  # date the policies go live
     "FORM_ENDPOINT": "",         # contact form POST URL; empty = opens visitor's email app
     "REPLY_TIME": "two business days",
