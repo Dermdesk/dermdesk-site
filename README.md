@@ -26,7 +26,10 @@ Links use clean URLs (`/about`, not `/about.html`) and root-relative paths, so t
 - **Apache (cPanel etc.):** the included `.htaccess` handles it. Make sure hidden files are uploaded.
 - **nginx:** add `try_files $uri $uri.html $uri/ =404;` to the `location /` block.
 
-Links out to the app (`app.dermdesk.com.au/signup`, `/login`, `/apply`) are hard-coded and assume that subdomain.
+Links out to the app are hard-coded in `_unpacked/*/template.html` and `pages/` and assume that subdomain:
+
+- clients: `app.dermdesk.com.au/?mode=signup` and `/?mode=login`
+- dermal professionals: `app.dermdesk.com.au/professional_login?mode=signup` and `/professional_login?mode=login`
 
 ## Before going live
 
