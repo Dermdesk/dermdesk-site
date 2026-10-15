@@ -323,7 +323,7 @@ CONFIG = {
     "EMAIL_PROS": "hello@dermdesk.com.au",
     "EMAIL_PRIVACY": "hello@dermdesk.com.au",
     "EFFECTIVE_DATE": "14 October 2026",  # date the policies go live
-    "FORM_ENDPOINT": "",         # contact form POST URL; empty = opens visitor's email app
+    "FORM_ENDPOINT": "https://formspree.io/f/mjygpwjg",  # contact form POST URL; empty = opens visitor's email app
     "REPLY_TIME": "two business days",
     "MIN_AGE": "18",
     "UNDER_AGE_POLICY": "If you are under 18, please don’t create an account or book a consultation.",
