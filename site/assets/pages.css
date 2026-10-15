@@ -1,4 +1,6 @@
 /* Shared styles for About / Contact / Privacy / Terms. Tokens match the landing pages. */
+/* Keep [hidden] working on elements that set their own display (e.g. .pg-form is flex) */
+[hidden]{display:none !important}
 .pg-wrap{max-width:1240px;margin:0 auto;padding:0 clamp(20px,4cqw,56px);box-sizing:border-box}
 .pg-hero{padding:clamp(40px,5cqw,72px) 0 clamp(40px,4.4cqw,64px);border-bottom:1px solid #efebe1}
 .pg-eyebrow{margin:0 0 16px;font-size:14px;font-weight:500;color:#6f7460;letter-spacing:.01em}
