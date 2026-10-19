@@ -1,7 +1,7 @@
 # DermDesk site: launch checklist
 
 ## Done
-- [x] Business details confirmed and filled in `CONFIG` in `build.py`: legal name, ABN, address, contact emails, effective date, video recording, data location, overseas countries, GST note, cancellation window, platform fee, governing state. No placeholders remain on the site.
+- [x] Business details confirmed and filled in `CONFIG` in `build.py`: ABN, contact emails, effective date, video recording, data location, overseas countries, GST note, cancellation window, platform fee, governing state. No placeholders remain on the site. At the client's request the owner's name and postal address are not published; the site says the postal address is available on request by email.
 - [x] Defaults confirmed by the client: reply time "two business days", minimum age 18, refunds take 5–10 business days.
 - [x] Pexels photo (Gustavo Fring, #7446685) checked: the Pexels licence allows commercial use without attribution.
 - [x] SEO basics: unique titles and descriptions, canonical links, Open Graph and Twitter tags with preview images, JSON-LD (Organization, WebSite, FAQPage), `sitemap.xml` and `robots.txt`.

@@ -51,7 +51,7 @@ PAGES = {
     },
 }
 
-# Client feedback (Karlee, Oct 2026). Specific phrases first; DCT is protected from
+# Client feedback (Oct 2026). Specific phrases first; DCT is protected from
 # the generic "clinician" -> "dermal professional" rules below.
 DCT = "\x00DCT\x00"
 COPY = [
@@ -209,7 +209,6 @@ def org_schema():
         "@type": "Organization",
         "@id": f"{SITE_URL}/#organization",
         "name": "DermDesk",
-        "legalName": CONFIG["LEGAL_NAME"],
         "url": f"{SITE_URL}/",
         "logo": f"{SITE_URL}/assets/mark-sage.svg",
         "description": SUBPAGES["about.html"][1],
@@ -316,9 +315,8 @@ body{{margin:0;background:#FFFCF5}}
 # Business details the client must confirm. None = not known yet: shown on the
 # page as a yellow highlighted placeholder so it can't be missed before launch.
 CONFIG = {
-    "LEGAL_NAME": "Karlee Jayne Sandland",
+    # The owner's name and postal address are deliberately not published (client request, Oct 2026)
     "ABN": "68 462 811 099",
-    "ADDRESS": "3 Porter Road, Warrnambool VIC 3280",  # postal address for privacy requests / notices
     "EMAIL_SUPPORT": "hello@dermdesk.com.au",
     "EMAIL_PROS": "hello@dermdesk.com.au",
     "EMAIL_PRIVACY": "hello@dermdesk.com.au",
